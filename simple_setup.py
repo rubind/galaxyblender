@@ -10,4 +10,4 @@ scn.objects.active = ob
 
 print(mesh)
 
-# blender --python /home/me/my_script.py
+#/Applications/Blender/blender.app/Contents/MacOS/blender --python simple_setup.py
