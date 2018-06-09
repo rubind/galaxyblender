@@ -1,5 +1,5 @@
 import bpy
-
+import numpy as np
 
 if "Cube" in bpy.data.meshes:
     mesh = bpy.data.meshes["Cube"]
@@ -7,11 +7,13 @@ if "Cube" in bpy.data.meshes:
     bpy.data.meshes.remove(mesh)
 
 
-mesh = bpy.data.meshes.new(name="Plane")
-ob = bpy.data.objects.new("Test", mesh)
-scn = bpy.context.scene
-scn.objects.link(ob)
-scn.objects.active = ob
+for i in range(10):
+    mesh = bpy.data.meshes.new(name="Plane")
+    ob = bpy.data.objects.new("Test" + str(i), mesh)
+    ob.location = np.random.random(size = 3)
+    scn = bpy.context.scene
+    scn.objects.link(ob)
+    scn.objects.active = ob
 
 
 
